@@ -13,7 +13,6 @@ import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
-import { PaginationOptions } from 'src/common/dto/pagination-result';
 
 @Controller('products')
 export class ProductsController {
@@ -29,14 +28,9 @@ export class ProductsController {
     return this.productsService.findAll(paginationDto);
   }
 
-  @Get('paginated')
-  findAllPaginated(@Query() paginationOptions: PaginationOptions) {
-    return this.productsService.findAllPaginated(paginationOptions);
-  }
-
   @Get(':value')
   findOne(@Param('value') value: string) {
-    return this.productsService.findOne(value);
+    return this.productsService.findOneFlat(value);
   }
 
   @Patch(':id')
