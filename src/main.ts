@@ -8,6 +8,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const logger = new Logger('TesloShop Boostrap');
 
+  app.enableCors();
+
   app.setGlobalPrefix('api');
 
   app.useGlobalPipes(
