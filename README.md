@@ -15,3 +15,5 @@
 docker-compose up -d
 ```
 6. Ejecutar el comando `pnpm run start:dev` para iniciar la aplicación en modo desarrollo.
+
+7. Ejecutar una petición `GET` al endpoint [`http://localhost:3000/api/seed`](http://localhost:3000/api/seed) para poblar la base de datos.
